@@ -5,7 +5,7 @@ import { MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
   { name: "Inicio", href: "/", current: true },
-  { name: "Tablas de snowboard", href: "/category/:tablas", current: true },
+  { name: "Tablas de snowboard", href: "/category/tablas", current: true },
   { name: "Indumentaria", href: "/indumentaria", current: true },
   { name: "Accesorios", href: "/accesorios", current: true },
 ];

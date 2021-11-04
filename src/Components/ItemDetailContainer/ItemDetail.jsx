@@ -1,8 +1,20 @@
 /* eslint-disable eqeqeq */
-
+import React, {useState} from "react";
 import ItemCount from './ItemCount/ItemCount'
 
 const ItemDetail = ({ items }) => {
+
+  const [itemCounts, setItemCounts] = useState()
+
+  const onAdd = (cantidad) => {
+    const addToCart = {
+        item : items ,
+        quantity : cantidad
+    }
+    setItemCounts(cantidad)
+};
+
+
   return (
     <>
           <div className="pt-6">
@@ -41,7 +53,10 @@ const ItemDetail = ({ items }) => {
                   >
                     Comprar
                   </button>
-                  <ItemCount stock={items.stock} initial={1} />
+                  <ItemCount stock={items.stock} initial={1} onAdd={onAdd}/>
+
+                  {itemCounts > 0 ? 
+                  <p>Agregaste {itemCounts} Items</p> : null}
                 </form>
               </div>
 

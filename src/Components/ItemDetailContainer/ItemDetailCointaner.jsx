@@ -23,7 +23,7 @@ const ItemListContainer = () => {
       {items
         .filter((items) => items.id == id)
         .map((items, id) => (
-          <ItemDetail items={items} key={id} />
+          <ItemDetail items={items} key={items.id} />
         ))}
     </>
   );

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
+
+  const submitItem = () => {
+    if(stock > 0){
+      onAdd(count)
+  }
+    
+
+  };
 
   const handleAddItem = () => {
     count < stock ? setCount(count + 1) : alert("Alcanzaste el stock máximo");
@@ -32,7 +40,15 @@ const ItemCount = ({ stock, initial }) => {
         >
           +
         </button>
+
       </div>
+      <button
+          type="button"
+          className="bg-green-500 hover:bg-gren-700 text-white font-bold py-2 px-4 rounded"
+          onClick={submitItem}
+        >
+        Agregar item
+        </button>
     </>
   );
 };
