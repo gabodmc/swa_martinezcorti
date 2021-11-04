@@ -1,0 +1,32 @@
+div .add-item {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+
+}
+
+.form-calculator-minmax {
+    width: 150px;
+    height: 30px;
+    line-height: 5px;
+    min-height: 5px;
+    border-radius: 10px;
+  }
+  
+  .form-calculator-minmax > button {
+    border: none;
+    font-size: 10px;
+  }
+  
+  .form-calculator-minmax > input {
+    border: none;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+  .form-control[readonly] {
+    background-color: #fff;
+  }
