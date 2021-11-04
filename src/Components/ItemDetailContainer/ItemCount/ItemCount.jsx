@@ -1,4 +1,4 @@
-import  React, { useState } from "react";
+import React, { useState } from "react";
 import "./ItemCount.css";
 
 const ItemCount = ({ stock, initial }) => {
@@ -9,30 +9,29 @@ const ItemCount = ({ stock, initial }) => {
   };
 
   const handleRemoveItem = () => {
-    count && stock > 0
+    count > 1
       ? setCount(count - 1)
-      : alert("La cantidad no puede ser menor a 0");
+      : alert("La cantidad no puede ser menor a 1");
   };
 
   return (
     <>
       <div className="add-item">
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handleRemoveItem}
-          >
-            -
-          </button>
-          <input
-            value={count}
-            onChange={setCount}
-          />
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handleAddItem}
-          >
-            +
-          </button>
+        <button
+          type="button"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleRemoveItem}
+        >
+          -
+        </button>
+        <input value={count} onChange={setCount} readOnly />
+        <button
+          type="button"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleAddItem}
+        >
+          +
+        </button>
       </div>
     </>
   );

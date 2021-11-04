@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq */
-import React from "react";
+
 import ItemCount from './ItemCount/ItemCount'
 
 const ItemDetail = ({ items }) => {
