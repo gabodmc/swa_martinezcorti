@@ -3,13 +3,16 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCointaner'
+import { ThemeContext } from "./Context/ThemeContext";
 import Cart from "./Components/Cart/Cart";
 
 import "./App.css";
 
 function App() {
+
   return (
     <>
+    <ThemeContext.Provider value={[]}/>
       <BrowserRouter>
         <Navbar />
         <br />
