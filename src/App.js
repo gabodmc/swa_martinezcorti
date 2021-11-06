@@ -2,17 +2,14 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCointaner'
-import { ThemeContext } from "./Context/ThemeContext";
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCointaner";
 import Cart from "./Components/Cart/Cart";
 
 import "./App.css";
 
 function App() {
-
   return (
     <>
-    <ThemeContext.Provider value={[]}/>
       <BrowserRouter>
         <Navbar />
         <br />
@@ -35,7 +32,6 @@ function App() {
           <Route path="/cart" exact>
             <Cart />
           </Route>
-          
         </Switch>
       </BrowserRouter>
     </>

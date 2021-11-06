@@ -18,7 +18,9 @@ const ItemListContainer = () => {
 
 
     return (
-        <ItemList items={items} />
+        items.length ? 
+        <ItemList items={items} /> :
+      <p>Cargando items</p>
     )
     
     

@@ -11,7 +11,7 @@ const ItemCard = ({ product }) => {
         />
       </div>
       <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
-      <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
+      <p className="mt-1 text-lg font-medium text-gray-900">${product.price}</p>
       <Link to={`/item/${product.id}`}>
         <button
           type="button"
@@ -20,20 +20,19 @@ const ItemCard = ({ product }) => {
           Ver detalles
         </button>
       </Link>
-      
     </article>
     // <article key={item.id}>
     //   <img alt={item.name} src={item.image} />
     //   <h3 id="brand">{item.shortname}</h3>
     //   <p id="price">${item.price}</p>
-      // <Link to={`/item/${item.id}`}>
-      //   <button
-      //     type="button"
-      //     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      //   >
-      //     Ver detalles
-      //   </button>
-      // </Link>
+    // <Link to={`/item/${item.id}`}>
+    //   <button
+    //     type="button"
+    //     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    //   >
+    //     Ver detalles
+    //   </button>
+    // </Link>
     // </article>
   );
 };
