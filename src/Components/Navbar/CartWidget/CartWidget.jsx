@@ -7,6 +7,7 @@ export const CartWidget = () => {
   const { countItems } = useContext(CartContext);
 
   return (
+    <>
     <div className="cart-widget">
       <Link to="/cart">
         <svg
@@ -24,7 +25,10 @@ export const CartWidget = () => {
           />
         </svg>
       </Link>
-      <span className="cartQuantity">{countItems()}</span>
+      
     </div>
+    <span className="cartQuantity">{countItems()}</span>
+    </>
+    
   );
 };

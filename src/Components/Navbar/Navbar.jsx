@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from '../../Assets/workflow-logo-indigo-500-mark-white-text.png'
 import { Link } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -40,13 +41,13 @@ export default function Navbar() {
                       <img
                         className="block lg:hidden h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                        alt="Workflow"
+                        alt="Snow Warehouse"
                       />
 
                       <img
                         className="hidden lg:block h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-                        alt="Workflow"
+                        src={Logo}
+                        alt="Snow Warehouse"
                       />
                     </Link>
                   </div>
@@ -64,7 +65,7 @@ export default function Navbar() {
                         </Link>
                       ))}
 
-                      <CartWidget />
+                      <CartWidget  />
                     </div>
                   </div>
                 </div>

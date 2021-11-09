@@ -21,7 +21,7 @@ const ItemCard = ({ product }) => {
         </button>
       </Link>
     </article>
-  );
+  )
 };
 
 export default ItemCard;

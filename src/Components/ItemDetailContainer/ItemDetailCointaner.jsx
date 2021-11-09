@@ -20,11 +20,11 @@ const ItemListContainer = () => {
 
   return (
     <>
-      {items
+      {items.length ? items
         .filter((items) => items.id == id)
         .map((items, id) => (
           <ItemDetail items={items} key={id} />
-        ))}
+        )) : <p>Cargando item</p>}
     </>
   );
 };

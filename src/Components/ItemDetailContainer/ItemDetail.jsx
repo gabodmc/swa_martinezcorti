@@ -46,11 +46,11 @@ const ItemDetail = ({ items }) => {
 
               {/* Reviews */}
 
+              {/* Colors */}
+
+              {/* Sizes */}
+
               <form className="mt-10">
-                {/* Colors */}
-
-                {/* Sizes */}
-
                 <Link to="/cart">
                   <button
                     type="button"

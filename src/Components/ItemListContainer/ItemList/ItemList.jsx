@@ -30,7 +30,7 @@ const ItemList = ({ items }) => {
           </div>
         </div>
       </div>
-      )
+      
     </>
   );
 };
