@@ -25,9 +25,8 @@ export const CartWidget = () => {
           />
         </svg>
       </Link>
-      
+    <span >{countItems()}</span>
     </div>
-    <span className="cartQuantity">{countItems()}</span>
     </>
     
   );

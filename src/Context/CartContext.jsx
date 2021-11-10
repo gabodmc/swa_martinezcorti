@@ -7,11 +7,10 @@ export const CustomProvider = ({ children }) => {
 
   const addItem = (item) => {
     setCart([...cart, item]);
-    console.log(item);
   };
 
   const removeItem = (itemId) => {
-    const deleteItem = cart.filter((item) => item.id !== itemId);
+    const deleteItem = cart.filter((item) => item.item.id !== itemId);
     setCart(deleteItem);
   };
 

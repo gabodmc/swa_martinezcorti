@@ -65,7 +65,14 @@ export default function Navbar() {
                         </Link>
                       ))}
 
-                      <CartWidget  />
+<button
+                            className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            aria-current="true"
+                          >
+                            <CartWidget  />
+                          </button>
+
+                      
                     </div>
                   </div>
                 </div>

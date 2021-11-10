@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCointaner";
-import Cart from "./Components/Cart/Cart";
+import CartContainer from "./Components/Cart/CartContainer";
 import { CustomProvider } from "./Context/CartContext";
 
 import "./App.css";
@@ -32,7 +32,7 @@ function App() {
               <ItemDetailContainer />
             </Route>
             <Route path="/cart" exact>
-              <Cart />
+              <CartContainer />
             </Route>
           </Switch>
         </BrowserRouter>

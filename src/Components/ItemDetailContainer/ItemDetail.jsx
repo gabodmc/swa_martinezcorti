@@ -15,7 +15,6 @@ const ItemDetail = ({ items }) => {
     };
     addItem(newItem);
     setItemCounts(quantity);
-    console.log(newItem);
   };
 
   return (

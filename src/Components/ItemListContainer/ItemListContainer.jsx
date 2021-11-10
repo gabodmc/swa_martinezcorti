@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from "react"
 import { Data } from "./Items"
 import ItemList from "./ItemList/ItemList";
+import Loader from "../Loader/Loader";
 
 
 const ItemListContainer = () => {
@@ -10,7 +11,7 @@ const ItemListContainer = () => {
       new Promise((response) => {
         setTimeout(() => {
           response(Data);
-        }, 5);
+        }, 1000);
       }).then((response) => {
         setItems(response)
       });
@@ -18,9 +19,11 @@ const ItemListContainer = () => {
 
 
     return (
-        items.length ? 
+      <>
+        {items.length ? 
         <ItemList items={items} /> :
-      <p>Cargando items</p>
+<Loader/>}
+</>
     )
     
     
