@@ -13,7 +13,7 @@ export const Data = [
   {
     id: 2,
     name: "CASCO OMBAK PADANG",
-    shortName: "NITRO TEAM GULLWING",
+    shortname: "CASCO OMBACK",
     description: "SKI SNOWBOARD UNISEX BLACK",
     category: "indumentaria",
     price: 20000,
@@ -23,7 +23,7 @@ export const Data = [
   },
   {
     id: 3,
-    shortname: "NITRO TEAM GULLWING",
+    shortname: "ANTIPARRAS DRAGON NFX",
     name: "ANTIPARRAS SKI SNOWBOARD DRAGON NFX",
     description: "REALM UNISEX LL BLACK BLUE ION",
     category: "accesorios",
@@ -45,7 +45,7 @@ export const Data = [
   {
     id: 5,
     name: "CASCO OMBAK PADANG",
-    shortname: "NITRO TEAM GULLWING",
+    shortname: "CASCO OMBACK",
     description: "SKI SNOWBOARD UNISEX BLACK",
     price: 20000,
     stock: 15,
@@ -54,7 +54,7 @@ export const Data = [
   },
   {
     id: 6,
-    shortname: "NITRO TEAM GULLWING",
+    shortname: "ANTIPARRAS DRAGON NFX",
     name: "ANTIPARRAS SKI SNOWBOARD DRAGON NFX",
     description: "REALM UNISEX LL BLACK BLUE ION",
     price: 15000,

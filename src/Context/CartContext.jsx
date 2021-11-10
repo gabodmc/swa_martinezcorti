@@ -6,8 +6,12 @@ export const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
-    setCart([...cart, item]);
-  };
+    if(searchInCart(item.id)){
+            <h4>Ya existe el producto</h4>
+            return false
+        }
+        setCart([...cart,item])
+    }
 
   const removeItem = (itemId) => {
     const deleteItem = cart.filter((item) => item.item.id !== itemId);
@@ -19,16 +23,28 @@ export const CustomProvider = ({ children }) => {
       return cart.length;
     }
   };
+  
+	const checkOutTotal = () => {
+		let total = 0;
+		cart.map(item => total += item.item.price * item.quantity);
+		return total;
+	}
 
   const clearCart = () => {
     setCart([]);
+    alert('Vaciaste el carrito')
   };
+
+  const searchInCart = () => {
+    cart.find(item => item.item.id === item.id)
+}
 
   const CartContextValues = {
     cart,
     addItem,
     removeItem,
     countItems,
+    checkOutTotal,
     clearCart,
   };
 

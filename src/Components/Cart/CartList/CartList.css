@@ -1,0 +1,18 @@
+.checkout-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.checkout-total p{
+text-align: center;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.checkout-total button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    
+

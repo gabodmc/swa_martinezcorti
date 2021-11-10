@@ -16,7 +16,7 @@ const ItemDetail = ({ items }) => {
     addItem(newItem);
     setItemCounts(quantity);
   };
-
+  console.log(itemCounts);
   return (
     <>
       <article>
@@ -50,19 +50,21 @@ const ItemDetail = ({ items }) => {
               {/* Sizes */}
 
               <form className="mt-10">
-                <Link to="/cart">
-                  <button
-                    type="button"
-                    className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                  >
-                    Comprar
-                  </button>
-                </Link>
-                <ItemCount stock={items.stock} initial={1} onAdd={onAdd} />
-
-                {itemCounts > 0 ? (
-                  <p>Agregaste {itemCounts} items al carrito.</p>
-                ) : null}
+                {itemCounts === undefined ? (
+                  <ItemCount stock={items.stock} initial={1} onAdd={onAdd} />
+                ) : (
+                  <>
+                    <p>Agregaste {itemCounts} items al carrito.</p>
+                    <Link to="/cart">
+                      <button
+                        type="button"
+                        className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      >
+                        Comprar
+                      </button>
+                    </Link>
+                  </>
+                )}
               </form>
             </div>
 
