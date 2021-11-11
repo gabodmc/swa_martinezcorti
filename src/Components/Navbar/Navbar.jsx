@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from '../../Assets/workflow-logo-indigo-500-mark-white-text.png'
-import LogoMini from '../../Assets/snow_mini.png'
+import Logo from "../../Assets/workflow-logo-indigo-500-mark-white-text.png";
+import LogoMini from "../../Assets/snow_mini.png";
 import { Link } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -66,20 +66,17 @@ export default function Navbar() {
                         </Link>
                       ))}
 
-<button
-                            className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                            aria-current="true"
-                          >
-                            <CartWidget  />
-                          </button>
-
-                      
+                      <button
+                        className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                        aria-current="true"
+                      >
+                        <CartWidget />
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
             <Disclosure.Panel className="sm:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (

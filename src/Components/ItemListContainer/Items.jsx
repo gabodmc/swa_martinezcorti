@@ -37,6 +37,7 @@ export const Data = [
     shortname: "NITRO TEAM GULLWING",
     name: "TABLA SNOWBOARD NITRO TEAM GULLWING",
     description: "ALL MOUNTAIN CAMBER ",
+    category: "tablas",
     price: 45000,
     stock: 15,
     image:
@@ -47,6 +48,7 @@ export const Data = [
     name: "CASCO OMBAK PADANG",
     shortname: "CASCO OMBACK",
     description: "SKI SNOWBOARD UNISEX BLACK",
+    category: "indumentaria",
     price: 20000,
     stock: 15,
     image:
@@ -57,6 +59,7 @@ export const Data = [
     shortname: "ANTIPARRAS DRAGON NFX",
     name: "ANTIPARRAS SKI SNOWBOARD DRAGON NFX",
     description: "REALM UNISEX LL BLACK BLUE ION",
+    category: "accesorios",
     price: 15000,
     stock: 15,
     image:
