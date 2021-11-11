@@ -20,7 +20,9 @@ export const CustomProvider = ({ children }) => {
 
   const countItems = () => {
     if (cart.length > 0) {
-      return cart.length;
+      let total= 0
+      cart.map((item) => (total += item.quantity));
+      return total;
     }
   };
 
