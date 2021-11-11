@@ -6,15 +6,15 @@ export const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
-    if(searchInCart(item.id)){
-            <h4>Ya existe el producto</h4>
-            return false
-        }
-        setCart([...cart,item])
-    }
+    cart.find((items) => items.id === item.id)
+      ? cart
+          .filter((items) => items.id === item.id)
+          .map((items) => (items.quantity = items.quantity + item.quantity))
+      : setCart([...cart, item]);
+  };
 
   const removeItem = (itemId) => {
-    const deleteItem = cart.filter((item) => item.item.id !== itemId);
+    const deleteItem = cart.filter((item) => item.id !== itemId);
     setCart(deleteItem);
   };
 
@@ -23,21 +23,17 @@ export const CustomProvider = ({ children }) => {
       return cart.length;
     }
   };
-  
-	const checkOutTotal = () => {
-		let total = 0;
-		cart.map(item => total += item.item.price * item.quantity);
-		return total;
-	}
+
+  const checkOutTotal = () => {
+    let total = 0;
+    cart.map((item) => (total += item.price * item.quantity));
+    return total;
+  };
 
   const clearCart = () => {
     setCart([]);
-    alert('Vaciaste el carrito')
+    alert("Vaciaste el carrito");
   };
-
-  const searchInCart = () => {
-    cart.find(item => item.item.id === item.id)
-}
 
   const CartContextValues = {
     cart,

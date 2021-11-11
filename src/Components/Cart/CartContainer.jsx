@@ -7,11 +7,7 @@ const CartContainer = () => {
   const { cart, checkOutTotal, clearCart } = useContext(CartContext);
 
   return cart.length > 0 ? (
-    <CartList
-      items={cart}
-      total={checkOutTotal}
-      clear={clearCart}
-    />
+    <CartList items={cart} total={checkOutTotal} clear={clearCart} />
   ) : (
     <>
       <br />

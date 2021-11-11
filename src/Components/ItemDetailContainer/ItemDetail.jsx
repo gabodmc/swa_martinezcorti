@@ -10,13 +10,18 @@ const ItemDetail = ({ items }) => {
 
   const onAdd = (quantity) => {
     const newItem = {
-      item: items,
+      id: items.id,
+      shortname: items.shortname,
+      name: items.name,
+      description: items.description,
+      category: items.category,
+      price: items.price,
+      image: items.image,
       quantity: quantity,
     };
     addItem(newItem);
     setItemCounts(quantity);
   };
-  console.log(itemCounts);
   return (
     <>
       <article>
@@ -60,7 +65,15 @@ const ItemDetail = ({ items }) => {
                         type="button"
                         className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       >
-                        Comprar
+                        Finalizar compra
+                      </button>
+                    </Link>
+                    <Link to="/">
+                      <button
+                        type="button"
+                        className="mt-10 w-full bg-green-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                      >
+                        Seguir comprando
                       </button>
                     </Link>
                   </>
