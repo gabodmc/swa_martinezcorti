@@ -36,6 +36,7 @@ export default function Navbar() {
                     )}
                   </Disclosure.Button>
                 </div>
+
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
                     <Link to="/">
@@ -52,6 +53,7 @@ export default function Navbar() {
                       />
                     </Link>
                   </div>
+
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
@@ -65,18 +67,20 @@ export default function Navbar() {
                           </button>
                         </Link>
                       ))}
-
-                      <button
-                        className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                        aria-current="true"
-                      >
-                        <CartWidget />
-                      </button>
                     </div>
                   </div>
                 </div>
+                <div className="cart-button">
+                  <button
+                    className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                    aria-current="true"
+                  >
+                    <CartWidget />
+                  </button>
+                </div>
               </div>
             </div>
+
             <Disclosure.Panel className="sm:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (
@@ -96,7 +100,6 @@ export default function Navbar() {
                     </Disclosure.Button>
                   </Link>
                 ))}
-                <CartWidget />
               </div>
             </Disclosure.Panel>
           </>
