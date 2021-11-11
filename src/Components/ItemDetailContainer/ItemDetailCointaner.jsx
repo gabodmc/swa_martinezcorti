@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Data } from "../ItemListContainer/Items";
 import ItemDetail from "./ItemDetail";
+import Loader from '../Loader/Loader'
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -24,7 +25,7 @@ const ItemListContainer = () => {
         .filter((items) => items.id == id)
         .map((items, id) => (
           <ItemDetail items={items} key={id} />
-        )) : <p>Cargando item</p>}
+        )) : <Loader />}
     </>
   );
 };

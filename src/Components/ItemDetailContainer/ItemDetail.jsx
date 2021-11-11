@@ -10,13 +10,7 @@ const ItemDetail = ({ items }) => {
 
   const onAdd = (quantity) => {
     const newItem = {
-      id: items.id,
-      shortname: items.shortname,
-      name: items.name,
-      description: items.description,
-      category: items.category,
-      price: items.price,
-      image: items.image,
+     ...items, 
       quantity: quantity,
     };
     addItem(newItem);
@@ -42,24 +36,15 @@ const ItemDetail = ({ items }) => {
                 {items.name}
               </h1>
             </div>
-
-            {/* Options */}
             <div className="mt-4 lg:mt-0 lg:row-span-3">
               <h2 className="sr-only">Información de producto</h2>
               <p className="text-3xl text-gray-900">${items.price}</p>
-
-              {/* Reviews */}
-
-              {/* Colors */}
-
-              {/* Sizes */}
-
               <form className="mt-10">
                 {itemCounts === undefined ? (
                   <ItemCount stock={items.stock} initial={1} onAdd={onAdd} />
                 ) : (
                   <>
-                    <p>Agregaste {itemCounts} items al carrito.</p>
+                    <p>Agregaste {itemCounts} items al carrito</p>
                     <Link to="/cart">
                       <button
                         type="button"
@@ -71,7 +56,7 @@ const ItemDetail = ({ items }) => {
                     <Link to="/">
                       <button
                         type="button"
-                        className="mt-10 w-full bg-green-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                        className="mt-10 w-full bg-green-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                       >
                         Seguir comprando
                       </button>
@@ -80,10 +65,7 @@ const ItemDetail = ({ items }) => {
                 )}
               </form>
             </div>
-
             <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              {/* Description and details */}
-
               <div className="mt-10">
                 <h2 className="text-sm font-medium text-gray-900">Detalles</h2>
                 <div className="mt-4 space-y-6">
