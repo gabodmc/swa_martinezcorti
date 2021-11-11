@@ -25,7 +25,7 @@ export const CartWidget = () => {
           />
         </svg>
       </Link>
-    <span >{countItems()}</span>
+      {countItems() !== undefined ? <span >{countItems()}</span> : ''}
     </div>
     </>
     
