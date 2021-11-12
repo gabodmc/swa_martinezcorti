@@ -10,12 +10,13 @@ const ItemDetail = ({ items }) => {
 
   const onAdd = (quantity) => {
     const newItem = {
-     ...items, 
+      ...items,
       quantity: quantity,
     };
     addItem(newItem);
     setItemCounts(quantity);
   };
+
   return (
     <>
       <article>

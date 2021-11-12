@@ -1,33 +1,42 @@
-import React, {useState,useEffect} from "react"
-import { Data } from "./Items"
+import React, { useState, useEffect } from "react";
 import ItemList from "./ItemList/ItemList";
 import Loader from "../Loader/Loader";
-
+import { getFirestore } from "../../Firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { useParams } from "react-router";
 
 const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
-  
-    useEffect(() => {
-      new Promise((response) => {
-        setTimeout(() => {
-          response(Data);
-        }, 1000);
-      }).then((response) => {
-        setItems(response)
+  const [items, setItems] = useState([]);
+  const { categoryId } = useParams();
+
+  useEffect(() => {
+    const db = getFirestore();
+    if (categoryId !== undefined) {
+      const q = query(
+        collection(db, "items"),
+        where("category", "==", categoryId)
+      );
+      getDocs(q).then((snapshot) => {
+        setItems(snapshot.docs.map((doc) => doc.data()));
       });
-    }, []);
+    } else {
+      getDocs(collection(db, "items"))
+        .then((snapshot) => {
+          setItems(snapshot.docs.map((doc) => doc.data()));
+        })
+        .catch((error) => console.log(error));
+    }
+  }, [categoryId]);
 
+   return (
+    <>
+      {items.length ? (
+        <ItemList items={items} title={categoryId} />
+      ) : (
+        <Loader />
+      )}
+    </>
+  );
+};
 
-    return (
-      <>
-        {items.length ? 
-        <ItemList items={items} /> :
-<Loader/>}
-</>
-    )
-    
-    
-
-}
-
-export default ItemListContainer
+export default ItemListContainer;
