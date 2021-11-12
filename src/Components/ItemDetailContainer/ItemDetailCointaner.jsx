@@ -11,8 +11,8 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const db = getFirestore();
-    const biciRef = doc(db, "items", id);
-    getDoc(biciRef).then((snapshot) => {
+    const itemRef = doc(db, "items", id);
+    getDoc(itemRef).then((snapshot) => {
       if (snapshot.exists()) {
         setItems(snapshot.data());
       }
