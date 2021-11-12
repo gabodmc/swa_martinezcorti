@@ -18,7 +18,7 @@ const ItemListContainer = () => {
       );
       getDocs(q).then((snapshot) => {
         setItems(snapshot.docs.map((doc) => doc.data()));
-      });
+      }).catch((error) => console.log(error));
     } else {
       getDocs(collection(db, "items"))
         .then((snapshot) => {
