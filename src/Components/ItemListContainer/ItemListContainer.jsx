@@ -9,6 +9,7 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { categoryId } = useParams();
 
+
   useEffect(() => {
     const db = getFirestore();
     if (categoryId !== undefined) {
@@ -17,12 +18,12 @@ const ItemListContainer = () => {
         where("category", "==", categoryId)
       );
       getDocs(q).then((snapshot) => {
-        setItems(snapshot.docs.map((doc) => doc.data()));
+        setItems(snapshot.docs.sort(function() { return Math.random() - 0.5 }).map((doc) => doc.data()));
       }).catch((error) => console.log(error));
     } else {
       getDocs(collection(db, "items"))
         .then((snapshot) => {
-          setItems(snapshot.docs.map((doc) => doc.data()));
+          setItems(snapshot.docs.sort(function() { return Math.random() - 0.5 }).map((doc) => doc.data()));
         })
         .catch((error) => console.log(error));
     }

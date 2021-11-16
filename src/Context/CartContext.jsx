@@ -6,11 +6,11 @@ export const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
-    cart.find((items) => items.id === item.id)
-      ? cart
-          .filter((items) => items.id === item.id)
-          .map((items) => (items.quantity = items.quantity + item.quantity))
-      : setCart([...cart, item]);
+    // cart.find((items) => items.id === item.id)
+    //   ? cart
+    //       .filter((items) => items.id === item.id)
+    //       .map((items) => (items.quantity = items.quantity + item.quantity))
+    setCart([...cart, item]);
   };
 
   const removeItem = (itemId) => {
