@@ -44,7 +44,7 @@ const CartList = ({ items, total, clear }) => {
                   </tr>
                 </thead>
                 {items.map((item) => (
-                  <CartListRow item={item} key={item.id}/>
+                  <CartListRow item={item} key={item.id} />
                 ))}
               </table>
             </div>

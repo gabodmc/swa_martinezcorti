@@ -4,22 +4,10 @@ import { CartContext } from "../../Context/CartContext";
 import CartList from "./CartList/CartList";
 
 const CartContainer = () => {
-  const { cart, checkOutTotal, clearCart } = useContext(CartContext);
-
-  const result = [];
-cart.reduce(function(res, value) {
-  if (!res[value.id]) {
-    res[value.id] = { ...value, quantity: 0 };
-    result.push(res[value.id])
-  }
-  res[value.id].quantity += value.quantity;
-  return res;
-}, {});
-console.log(result)
+  const { cart, cartResult, checkOutTotal, clearCart } = useContext(CartContext);
 
   return cart.length > 0 ? (
-
-    <CartList items={result} total={checkOutTotal} clear={clearCart} />
+    <CartList items={cartResult} total={checkOutTotal} clear={clearCart} />
   ) : (
     <>
       <br />

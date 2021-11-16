@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import swal from "sweetalert";
 export const CartContext = createContext();
 const { Provider } = CartContext;
 
@@ -6,21 +7,36 @@ export const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
-    // cart.find((items) => items.id === item.id)
-    //   ? cart
-    //       .filter((items) => items.id === item.id)
-    //       .map((items) => (items.quantity = items.quantity + item.quantity))
     setCart([...cart, item]);
   };
 
+  const cartResult = [];
+  console.log(cartResult);
+  cart.reduce(function (res, value) {
+    if (!res[value.id]) {
+      res[value.id] = { ...value, quantity: 0 };
+      cartResult.push(res[value.id]);
+    }
+    res[value.id].quantity += value.quantity;
+    return res;
+  }, {});
+
   const removeItem = (itemId) => {
     const deleteItem = cart.filter((item) => item.id !== itemId);
-    setCart(deleteItem);
+    swal({
+      title: "Estás seguro de eliminar el item?",
+      icon: "warning",
+      buttons: ["No", "Si"],
+    }).then((respuesta) => {
+      if (respuesta) {
+        setCart(deleteItem);
+      }
+    });
   };
 
   const countItems = () => {
     if (cart.length > 0) {
-      let total= 0
+      let total = 0;
       cart.map((item) => (total += item.quantity));
       return total;
     }
@@ -33,8 +49,16 @@ export const CustomProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setCart([]);
-    alert("Vaciaste el carrito");
+    swal({
+      title: "Estás seguro de vaciar el carrito?",
+      icon: "warning",
+      buttons: ["No", "Si"],
+    }).then((respuesta) => {
+      if (respuesta) {
+        swal({ text: "Vaciaste el carrito", icon: "success" });
+        setCart([]);
+      }
+    });
   };
 
   const CartContextValues = {
@@ -44,6 +68,7 @@ export const CustomProvider = ({ children }) => {
     countItems,
     checkOutTotal,
     clearCart,
+    cartResult,
   };
 
   return <Provider value={CartContextValues}>{children}</Provider>;
