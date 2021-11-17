@@ -11,7 +11,6 @@ export const CustomProvider = ({ children }) => {
   };
 
   const cartResult = [];
-  console.log(cartResult);
   cart.reduce(function (res, value) {
     if (!res[value.id]) {
       res[value.id] = { ...value, quantity: 0 };
@@ -61,6 +60,11 @@ export const CustomProvider = ({ children }) => {
     });
   };
 
+  const clearCheckOut = () => {
+       setCart([]);
+
+  };
+
   const CartContextValues = {
     cart,
     addItem,
@@ -68,6 +72,7 @@ export const CustomProvider = ({ children }) => {
     countItems,
     checkOutTotal,
     clearCart,
+    clearCheckOut,
     cartResult,
   };
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CartListRow from "./CartListRow";
 import "./CartList.css";
 
@@ -53,12 +54,15 @@ const CartList = ({ items, total, clear }) => {
       </div>
       <div className="checkout-total">
         <p>Total: $ {total()}</p>
+        
         <button
           type="button"
           className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-        >
+        ><Link to="/checkout">
           Finalizar compra
+          </Link>
         </button>
+      
         <button
           onClick={clear}
           className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
@@ -66,6 +70,8 @@ const CartList = ({ items, total, clear }) => {
           Vacar carrito
         </button>
       </div>
+
+      
     </>
   );
 };

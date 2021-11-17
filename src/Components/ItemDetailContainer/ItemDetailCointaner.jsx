@@ -6,7 +6,7 @@ import ItemDetail from "./ItemDetail";
 import Loader from "../Loader/Loader";
 
 const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(undefined);
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const ItemListContainer = () => {
     getDoc(itemRef).then((snapshot) => {
       if (snapshot.exists()) {
         setItems(snapshot.data());
-      }
+      } 
     });
   }, [id]);
 
