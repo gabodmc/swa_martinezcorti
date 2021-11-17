@@ -12,8 +12,8 @@ const CheckoutForm = () => {
   const { cart, checkOutTotal, clearCheckOut } = useContext(CartContext);
   const history = useHistory();
 
-  return cart.length > 0 ? (
-  
+  return (
+    <>
     <Formik
       initialValues={{ name: "", lastname: "", phone: "", email: "" }}
       validationSchema={CreateSchema}
@@ -182,25 +182,6 @@ const CheckoutForm = () => {
         </div>
       )}
     </Formik>
-
-  ) : (
-    <>
-      <br />
-      <h3
-        className="block text-lg font-medium text-gray-700"
-        style={{ textAlign: "center" }}
-      >
-        Aun no agregaste items
-        <br />
-        <Link to="/">
-          <button
-            type="button"
-            className=" py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-          >
-            Ir de shopping
-          </button>
-        </Link>
-      </h3>
     </>
   );
     
