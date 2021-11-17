@@ -51,8 +51,10 @@ const CartList = ({ items, total, clear }) => {
             </div>
           </div>
         </div>
+        <div className="total"> <p>Total: $ {total()}</p></div>
       </div>
-      <p>Total: $ {total()}</p>
+
+     
       <div className="checkout-total">
         <Link to="/checkout">
         <button
