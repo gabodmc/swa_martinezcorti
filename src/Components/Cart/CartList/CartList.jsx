@@ -52,17 +52,16 @@ const CartList = ({ items, total, clear }) => {
           </div>
         </div>
       </div>
+      <p>Total: $ {total()}</p>
       <div className="checkout-total">
-        <p>Total: $ {total()}</p>
-        
+        <Link to="/checkout">
         <button
           type="button"
           className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-        ><Link to="/checkout">
+        >
           Finalizar compra
-          </Link>
         </button>
-      
+        </Link>
         <button
           onClick={clear}
           className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
