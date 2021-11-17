@@ -5,6 +5,7 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCointaner";
 import CartContainer from "./Components/Cart/CartContainer";
 import CheckoutContainer from "./Components/Checkout/CheckoutContainer";
+import Footer from "./Components/Footer/Footer";
 import { CustomProvider } from "./Context/CartContext";
 
 import "./App.css";
@@ -39,6 +40,7 @@ function App() {
               <CheckoutContainer />
             </Route>
           </Switch>
+          <Footer />
         </BrowserRouter>
       </CustomProvider>
     </>
