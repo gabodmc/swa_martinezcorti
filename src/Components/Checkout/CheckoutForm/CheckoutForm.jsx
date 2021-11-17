@@ -159,6 +159,7 @@ const CheckoutForm = () => {
                     </div>
                   </div>
                   <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                    <div className="div-buttons">
                     <button
                       type="submit"
                       disabled={isSubmitting}
@@ -174,6 +175,7 @@ const CheckoutForm = () => {
                         Volver
                       </button>
                     </Link>
+                    </div>
                   </div>
                 </div>
               </form>

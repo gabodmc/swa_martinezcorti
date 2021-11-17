@@ -10,7 +10,7 @@ const Footer = () => {
             </div>
         </nav> */}
         <div className="flex justify-center mt-8 space-x-6">
-          <p href="https://github.com/gabodmc/swa_martinezcorti" className="text-gray-400 hover:text-gray-500">
+          <a href="https://github.com/gabodmc/swa_martinezcorti" className="text-gray-400 hover:text-gray-500">
             <span className="sr-only">GitHub</span>
             <svg
               className="w-6 h-6"
@@ -24,7 +24,7 @@ const Footer = () => {
                 clip-rule="evenodd"
               ></path>
             </svg>
-          </p>
+          </a>
         </div>
         <p className="mt-8 text-base leading-6 text-center text-gray-400">
           © 2021 Snow Warehouse by Gabriel Martinez Corti.
