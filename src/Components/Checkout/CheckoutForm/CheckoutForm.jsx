@@ -18,7 +18,7 @@ const CheckoutForm = () => {
         initialValues={{ name: "", lastname: "", phone: "", email: "" }}
         validationSchema={CreateSchema}
         onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
+   
             const order = {
               buyer: {
                 name: values.name,
@@ -46,8 +46,8 @@ const CheckoutForm = () => {
                 }
               })
             );
-            setSubmitting(false);
-          }, 2500);
+          
+       
         }}
       >
         {({
