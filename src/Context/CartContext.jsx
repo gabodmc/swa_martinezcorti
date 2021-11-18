@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import swal from "sweetalert";
+import Swal from 'sweetalert2'
 export const CartContext = createContext();
 const { Provider } = CartContext;
 
@@ -22,15 +22,19 @@ export const CustomProvider = ({ children }) => {
 
   const removeItem = (itemId) => {
     const deleteItem = cart.filter((item) => item.id !== itemId);
-    swal({
-      title: "Estás seguro de eliminar el item?",
-      icon: "warning",
-      buttons: ["No", "Si"],
-    }).then((respuesta) => {
-      if (respuesta) {
+    Swal.fire({
+      title: 'Esta seguro de eliminar este item?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: 'green',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
         setCart(deleteItem);
       }
-    });
+    })
   };
 
   const countItems = () => {
@@ -48,16 +52,24 @@ export const CustomProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    swal({
-      title: "Estás seguro de vaciar el carrito?",
-      icon: "warning",
-      buttons: ["No", "Si"],
-    }).then((respuesta) => {
-      if (respuesta) {
-        swal({ text: "Vaciaste el carrito", icon: "success" });
+    Swal.fire({
+      title: 'Esta seguro de vaciar el carrito?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: 'green',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Vaciar carrito'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Vaciaste el carrito',
+          "",          
+          'success'
+        )
         setCart([]);
       }
-    });
+    })
   };
 
   const clearCheckOut = () => {
