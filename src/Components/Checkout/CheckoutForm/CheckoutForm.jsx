@@ -36,7 +36,7 @@ const CheckoutForm = () => {
               Swal.fire({
                 title: values.name + ", te agradecemos por tu compra",
                 text: "Tu numero de ticket es: " + id,
-                icon: "sucess",
+                icon: "success",
                 confirmButtonColor: "green",
                 confirmButtonText: "Finalizar compra",
               }).then((result) => {
