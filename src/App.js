@@ -7,12 +7,14 @@ import CartContainer from "./Components/Cart/CartContainer";
 import CheckoutContainer from "./Components/Checkout/CheckoutContainer";
 import Footer from "./Components/Footer/Footer";
 import { CustomProvider } from "./Context/CartContext";
+import { StyilesProvider } from "./Context/StyleContext";
 
 import "./App.css";
 
 function App() {
   return (
     <>
+    <StyilesProvider>
       <CustomProvider>
         <BrowserRouter>
           <Navbar />
@@ -43,6 +45,7 @@ function App() {
           <Footer />
         </BrowserRouter>
       </CustomProvider>
+      </StyilesProvider>
     </>
   );
 }

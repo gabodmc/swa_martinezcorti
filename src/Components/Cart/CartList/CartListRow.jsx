@@ -1,10 +1,12 @@
 import "./CartListRow.css";
 import TrashIcon from "./TrashIcon";
 import { CartContext } from "../../../Context/CartContext";
+import { StyleContext } from "../../../Context/StyleContext";
 import { useContext } from "react";
 
 const CartListRow = ({ item }) => {
   const { removeItem } = useContext(CartContext);
+  const { redButton } = useContext(StyleContext);
 
   return (
     <tbody key={item.name} className="bg-white divide-y divide-gray-200">
@@ -27,7 +29,7 @@ const CartListRow = ({ item }) => {
         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
           <button
             onClick={() => removeItem(item.id)}
-            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+            className={redButton}
           >
             <TrashIcon />
           </button>

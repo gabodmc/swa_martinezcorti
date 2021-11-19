@@ -2,11 +2,15 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount/ItemCount";
-import { CartContext } from "../../Context/CartContext";
+import {CartContext} from "../../../Context/CartContext"
+import {StyleContext} from "../../../Context/StyleContext"
+import './ItemDetail.css'
+
 
 const ItemDetail = ({ items }) => {
   const [itemCounts, setItemCounts] = useState();
   const { addItem } = useContext(CartContext);
+  const { greenButton, indigoButton } = useContext(StyleContext);
 
   const onAdd = (quantity) => {
     const newItem = {
@@ -49,7 +53,7 @@ const ItemDetail = ({ items }) => {
                     <Link to="/cart">
                       <button
                         type="button"
-                        className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        className={greenButton}
                       >
                         Finalizar compra
                       </button>
@@ -57,7 +61,7 @@ const ItemDetail = ({ items }) => {
                     <Link to="/">
                       <button
                         type="button"
-                        className="mt-10 w-full bg-green-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                        className={indigoButton}
                       >
                         Seguir comprando
                       </button>

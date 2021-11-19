@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import CartListRow from "./CartListRow";
 import "./CartList.css";
+import { StyleContext } from "../../../Context/StyleContext";
 
 const CartList = ({ items, total, clear }) => {
+
+  const { greenButton, redButton } = useContext(StyleContext);
+  
   return (
     <>
       <div className="flex flex-col">
@@ -61,14 +66,14 @@ const CartList = ({ items, total, clear }) => {
         <Link to="/checkout">
           <button
             type="button"
-            className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+            className={greenButton}
           >
             Finalizar compra
           </button>
         </Link>
         <button
           onClick={clear}
-          className="border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          className={redButton}
         >
           Vaciar carrito
         </button>
