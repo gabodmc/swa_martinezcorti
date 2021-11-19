@@ -3,6 +3,11 @@
 Tienda de articulos para ski y snowboard.
 App creada para el curso de ReactJS en Coderhouse.
 
+![image](https://i.imgur.com/QtvJjMB.gif)
+
+Ver las funcionalidades en [Youtube](https://www.youtube.com/watch?v=804rzJUpkjA)
+
+
 ### Links 🔗
 [Deploy en Heroku](https://swa-coder.herokuapp.com/)
 
