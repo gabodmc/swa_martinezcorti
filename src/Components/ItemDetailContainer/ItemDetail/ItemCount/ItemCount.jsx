@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ItemCount.css";
+import Swal from "sweetalert2";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
@@ -13,13 +14,21 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   const handleAddItem = () => {
-    count < stock ? setCount(count + 1) : alert("Alcanzaste el stock máximo");
+    count < stock ? setCount(count + 1) : Swal.fire(
+      'Alcanzaste el stock máximo',
+      '',
+      'warning'
+    )
   };
 
   const handleRemoveItem = () => {
     count > 1
       ? setCount(count - 1)
-      : alert("La cantidad no puede ser menor a 1");
+      : Swal.fire(
+        'El stock no puede ser menor a 1',
+        '',
+        'warning'
+      )
   };
 
   return (
